@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Contact"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "adresse": {
+      "type": "text"
+    },
+    "tel": {
+      "type": "text"
+    },
+    "demande_email": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "plats",
+  "info": {
+    "singularName": "plat",
+    "pluralName": "plats",
+    "displayName": "Plat",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "libelleFR": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "libelleEN": {
+      "type": "string",
+      "unique": true,
+      "required": false
+    },
+    "prix": {
+      "type": "decimal",
+      "unique": false,
+      "required": false
+    },
+    "compositionFR": {
+      "type": "richtext"
+    },
+    "compositionEN": {
+      "type": "richtext"
+    },
+    "categorie_plat": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::categorie.categorie",
+      "inversedBy": "plats"
+    },
+    "info": {
+      "type": "richtext"
+    },
+    "sousCate": {
+      "type": "enumeration",
+      "enum": [
+        "Les Gaufres"
+      ]
+    },
+    "position": {
+      "type": "integer",
+      "unique": false
+    }
+  }
+}

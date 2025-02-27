@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "brasserie_horaires",
+  "info": {
+    "singularName": "brasserie-horaire",
+    "pluralName": "brasserie-horaires",
+    "displayName": "BrasserieHoraire",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titreHoraires": {
+      "type": "string"
+    },
+    "datePortee": {
+      "type": "richtext"
+    },
+    "block1": {
+      "type": "richtext"
+    },
+    "block2": {
+      "type": "richtext"
+    },
+    "concerts": {
+      "type": "richtext"
+    },
+    "traiteur": {
+      "type": "richtext"
+    },
+    "paiements": {
+      "type": "richtext"
+    },
+    "animaux": {
+      "type": "richtext"
+    },
+    "traiteurTexte": {
+      "type": "richtext"
+    }
+  }
+}

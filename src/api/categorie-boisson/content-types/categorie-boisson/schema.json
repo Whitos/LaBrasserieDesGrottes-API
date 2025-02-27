@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categorie_boissons",
+  "info": {
+    "singularName": "categorie-boisson",
+    "pluralName": "categorie-boissons",
+    "displayName": "CategorieBoisson"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titreFR": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "boissons": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::boisson.boisson",
+      "mappedBy": "categorie_boisson"
+    }
+  }
+}
