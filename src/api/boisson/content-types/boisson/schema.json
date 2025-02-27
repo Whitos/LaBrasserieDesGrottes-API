@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "boissons",
+  "info": {
+    "singularName": "boisson",
+    "pluralName": "boissons",
+    "displayName": "Boisson",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titreFR": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "prix": {
+      "type": "decimal",
+      "required": false
+    },
+    "categorie_boisson": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::categorie-boisson.categorie-boisson",
+      "inversedBy": "boissons"
+    },
+    "titreEN": {
+      "type": "string",
+      "required": false,
+      "unique": true
+    },
+    "choix": {
+      "type": "richtext"
+    },
+    "prix25cl": {
+      "type": "decimal"
+    },
+    "prix50cl": {
+      "type": "decimal"
+    },
+    "sousCategorie": {
+      "type": "enumeration",
+      "enum": [
+        "Les Rouges",
+        "Les Blancs",
+        "Les Rosés",
+        "Les Pétillants"
+      ]
+    },
+    "position": {
+      "type": "integer"
+    }
+  }
+}

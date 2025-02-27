@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "singularName": "categorie",
+    "pluralName": "categories",
+    "displayName": "CategoriePlat",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titreFR": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "titreEN": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "plats": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::plat.plat",
+      "mappedBy": "categorie_plat"
+    },
+    "accompagnement": {
+      "type": "string"
+    },
+    "info": {
+      "type": "string"
+    }
+  }
+}

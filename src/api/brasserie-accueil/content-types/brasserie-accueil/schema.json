@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "brasserie_accueils",
+  "info": {
+    "singularName": "brasserie-accueil",
+    "pluralName": "brasserie-accueils",
+    "displayName": "BrasserieAccueil"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "base": {
+      "type": "text"
+    },
+    "block1": {
+      "type": "richtext"
+    },
+    "block2": {
+      "type": "richtext"
+    },
+    "serviceMidi": {
+      "type": "richtext"
+    },
+    "partnerships": {
+      "type": "richtext"
+    }
+  }
+}
