@@ -4,10 +4,9 @@ export default [
   {
     name: 'strapi::cors',
     config: {
-      origin: [
-        'http://localhost:3000',        // si vous testez en local
-        'https://www.labrasseriedesgrottes.fr',   // si vous avez un domaine en HTTPS
-      ],
+      origin: process.env.NODE_ENV === 'development'
+        ? 'http://localhost:3000'
+        : 'https://www.labrasseriedesgrottes.fr',
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
       headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
       keepHeaderOnError: true,
