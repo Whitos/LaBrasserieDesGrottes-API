@@ -513,6 +513,36 @@ export interface ApiCarouselCarousel extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiCarteServicePresentationCarteServicePresentation
+  extends Struct.SingleTypeSchema {
+  collectionName: 'carte_service_presentations';
+  info: {
+    displayName: 'CarteServicePresentation';
+    pluralName: 'carte-service-presentations';
+    singularName: 'carte-service-presentation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::carte-service-presentation.carte-service-presentation'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    service: Schema.Attribute.Text;
+    suggestion: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCategorieBoissonCategorieBoisson
   extends Struct.CollectionTypeSchema {
   collectionName: 'categorie_boissons';
@@ -1265,6 +1295,7 @@ declare module '@strapi/strapi' {
       'api::brasserie-accueil.brasserie-accueil': ApiBrasserieAccueilBrasserieAccueil;
       'api::brasserie-horaire.brasserie-horaire': ApiBrasserieHoraireBrasserieHoraire;
       'api::carousel.carousel': ApiCarouselCarousel;
+      'api::carte-service-presentation.carte-service-presentation': ApiCarteServicePresentationCarteServicePresentation;
       'api::categorie-boisson.categorie-boisson': ApiCategorieBoissonCategorieBoisson;
       'api::categorie.categorie': ApiCategorieCategorie;
       'api::contact.contact': ApiContactContact;

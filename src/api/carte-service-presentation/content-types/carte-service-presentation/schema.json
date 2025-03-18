@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "carte_service_presentations",
+  "info": {
+    "singularName": "carte-service-presentation",
+    "pluralName": "carte-service-presentations",
+    "displayName": "CarteServicePresentation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "service": {
+      "type": "text"
+    },
+    "suggestion": {
+      "type": "text"
+    }
+  }
+}
