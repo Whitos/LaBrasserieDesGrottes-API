@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "accueil_partenaires",
+  "info": {
+    "singularName": "accueil-partenaire",
+    "pluralName": "accueil-partenaires",
+    "displayName": "AccueilPartenaire"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "url": {
+      "type": "text"
+    }
+  }
+}

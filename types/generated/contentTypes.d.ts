@@ -369,6 +369,66 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAccueilPartenaireAccueilPartenaire
+  extends Struct.SingleTypeSchema {
+  collectionName: 'accueil_partenaires';
+  info: {
+    displayName: 'AccueilPartenaire';
+    pluralName: 'accueil-partenaires';
+    singularName: 'accueil-partenaire';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::accueil-partenaire.accueil-partenaire'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.Text;
+  };
+}
+
+export interface ApiAttractionAttraction extends Struct.CollectionTypeSchema {
+  collectionName: 'attractions';
+  info: {
+    displayName: 'Attraction';
+    pluralName: 'attractions';
+    singularName: 'attraction';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::attraction.attraction'
+    > &
+      Schema.Attribute.Private;
+    ordre: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiBoissonBoisson extends Struct.CollectionTypeSchema {
   collectionName: 'boissons';
   info: {
@@ -1291,6 +1351,8 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::accueil-partenaire.accueil-partenaire': ApiAccueilPartenaireAccueilPartenaire;
+      'api::attraction.attraction': ApiAttractionAttraction;
       'api::boisson.boisson': ApiBoissonBoisson;
       'api::brasserie-accueil.brasserie-accueil': ApiBrasserieAccueilBrasserieAccueil;
       'api::brasserie-horaire.brasserie-horaire': ApiBrasserieHoraireBrasserieHoraire;
