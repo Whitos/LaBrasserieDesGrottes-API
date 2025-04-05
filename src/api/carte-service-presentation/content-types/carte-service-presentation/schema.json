@@ -4,18 +4,33 @@
   "info": {
     "singularName": "carte-service-presentation",
     "pluralName": "carte-service-presentations",
-    "displayName": "CarteServicePresentation"
+    "displayName": "CarteServicePresentation",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "service": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "suggestion": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

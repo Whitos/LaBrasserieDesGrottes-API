@@ -661,6 +661,7 @@ export interface ApiCarteServicePresentationCarteServicePresentation
   extends Struct.SingleTypeSchema {
   collectionName: 'carte_service_presentations';
   info: {
+    description: '';
     displayName: 'CarteServicePresentation';
     pluralName: 'carte-service-presentations';
     singularName: 'carte-service-presentation';
@@ -668,19 +669,33 @@ export interface ApiCarteServicePresentationCarteServicePresentation
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::carte-service-presentation.carte-service-presentation'
-    > &
-      Schema.Attribute.Private;
+    >;
     publishedAt: Schema.Attribute.DateTime;
-    service: Schema.Attribute.Text;
-    suggestion: Schema.Attribute.Text;
+    service: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    suggestion: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
