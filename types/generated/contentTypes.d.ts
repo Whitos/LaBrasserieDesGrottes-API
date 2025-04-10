@@ -943,6 +943,38 @@ export interface ApiGallerieImageGallerieImage
   };
 }
 
+export interface ApiPartenairePartenaire extends Struct.CollectionTypeSchema {
+  collectionName: 'partenaires';
+  info: {
+    description: '';
+    displayName: 'Partenaire';
+    pluralName: 'partenaires';
+    singularName: 'partenaire';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::partenaire.partenaire'
+    > &
+      Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPlatPlat extends Struct.CollectionTypeSchema {
   collectionName: 'plats';
   info: {
@@ -1549,6 +1581,7 @@ declare module '@strapi/strapi' {
       'api::evenement-prog.evenement-prog': ApiEvenementProgEvenementProg;
       'api::evenement.evenement': ApiEvenementEvenement;
       'api::gallerie-image.gallerie-image': ApiGallerieImageGallerieImage;
+      'api::partenaire.partenaire': ApiPartenairePartenaire;
       'api::plat.plat': ApiPlatPlat;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
