@@ -4,17 +4,27 @@
   "info": {
     "singularName": "categorie-boisson",
     "pluralName": "categorie-boissons",
-    "displayName": "CategorieBoisson"
+    "displayName": "CategorieBoisson",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "titreFR": {
       "type": "string",
       "required": true,
-      "unique": true
+      "unique": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "boissons": {
       "type": "relation",

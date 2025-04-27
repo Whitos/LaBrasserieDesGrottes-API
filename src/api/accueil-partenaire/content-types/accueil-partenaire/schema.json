@@ -4,15 +4,25 @@
   "info": {
     "singularName": "accueil-partenaire",
     "pluralName": "accueil-partenaires",
-    "displayName": "AccueilPartenaire"
+    "displayName": "AccueilPartenaire",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "url": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
